@@ -15,16 +15,21 @@
                 Value="{StaticResource BackgroundNormal}" />
         <Setter Property="BorderBrush"
                 Value="{StaticResource BorderBrushNormal}" />
+        <Setter Property="Padding"
+                Value="20,5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border SnapsToDevicePixels="True"
                             BorderThickness="1"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            Background="{TemplateBinding Background}">
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
                         <Grid>
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center" />
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              RecognizesAccessKey="True" />
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
